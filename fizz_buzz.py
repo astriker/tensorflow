@@ -5,6 +5,7 @@
 
 import numpy as np
 import tensorflow as tf
+import time
 
 NUM_DIGITS = 10
 
@@ -63,7 +64,7 @@ def fizz_buzz(i, prediction):
     return [str(i), "fizz", "buzz", "fizzbuzz"][prediction]
 
 BATCH_SIZE = 128
-
+s = time.time()
 # Launch the graph in a session
 with tf.Session() as sess:
     tf.initialize_all_variables().run()
@@ -89,3 +90,5 @@ with tf.Session() as sess:
     output = np.vectorize(fizz_buzz)(numbers, teY)
 
     print(output)
+    e = time.time()
+    print '%gs' % (e - s)
