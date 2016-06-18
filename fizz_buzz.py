@@ -69,7 +69,7 @@ s = time.time()
 with tf.Session() as sess:
     tf.initialize_all_variables().run()
 
-    for epoch in range(10000):
+    for epoch in range(2000):
         # Shuffle the data before each training iteration.
         p = np.random.permutation(range(len(trX)))
         trX, trY = trX[p], trY[p]
